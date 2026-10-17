@@ -31,5 +31,17 @@ class ConfirmActivity : AppCompatActivity() {
         tvConfirmValue = findViewById(R.id.tvConfirmValue)
         tvConfirmCode = findViewById(R.id.tvConfirmCode)
         tvConfirmQuantity = findViewById(R.id.tvConfirmQuantity)
+
+        intent.getStringExtra("code")?.let {
+            tvConfirmCode.text = it
+        }
+
+        intent.getStringExtra("quantity")?.let {
+            tvConfirmQuantity.text = it
+        }
+
+        intent.getStringExtra("value")?.let {
+            tvConfirmValue.text = it
+        }
     }
 }
