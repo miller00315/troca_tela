@@ -79,7 +79,6 @@ class LaunchActivity : AppCompatActivity() {
             return
         }
 
-
         intent.putExtra("code", edCode.text.toString())
         intent.putExtra("quantity", edQuantity.text.toString())
         intent.putExtra("value", edValue.text.toString())
