@@ -1,5 +1,7 @@
 package com.miller.oliveira.trocatela
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
@@ -43,5 +45,21 @@ class ConfirmActivity : AppCompatActivity() {
         intent.getStringExtra("value")?.let {
             tvConfirmValue.text = it
         }
+
+        btConfirm.setOnClickListener { _ -> btSmsOnClick() }
+    }
+
+    fun btSmsOnClick() {
+        val sms_body = "Cod: ${tvConfirmCode.text} Qtd: ${tvConfirmQuantity.text} Valor: ${tvConfirmValue.text}"
+
+        val sms_number = "+55123456789"
+
+        val intent = Intent(Intent.ACTION_VIEW)
+
+        intent.putExtra("sms_body", sms_body)
+
+        intent.setData(Uri.parse("sms:${sms_number}"))
+
+        startActivity(intent)
     }
 }

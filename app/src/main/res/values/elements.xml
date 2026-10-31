@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="products">
+        <item>Coca light</item>
+        <item>Coca normal</item>
+        <item>Coca zezezezero</item>
+        <item>Agua que passaro não bebe</item>
+        <item>Tubarão não nada</item>
+        <item>Cana</item>
+        <item>Tutubaina</item>
+    </string-array>
+</resources>

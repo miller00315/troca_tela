@@ -7,4 +7,6 @@
     <string name="list">Listar</string>
     <string name="confirm">Confirmar</string>
     <string name="sms">SMS</string>
+    <string name="required">Campo obrigatório</string>
+    <string name="verify">Verifique o campos</string>
 </resources>

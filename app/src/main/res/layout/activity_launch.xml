@@ -18,12 +18,12 @@
 
     <EditText
         android:id="@+id/etCode"
-        app:layout_constraintTop_toTopOf="@id/tvCode"
-        app:layout_constraintStart_toEndOf="@id/tvCode"
-        app:layout_constraintEnd_toEndOf="parent"
         android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:inputType="number"
-        android:layout_height="wrap_content"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvQuantity"
+        app:layout_constraintTop_toTopOf="@id/tvCode" />
 
 
     <TextView
@@ -55,12 +55,12 @@
 
     <EditText
         android:id="@+id/etValue"
-        app:layout_constraintTop_toTopOf="@id/tvValue"
-        app:layout_constraintStart_toEndOf="@id/tvValue"
-        app:layout_constraintEnd_toEndOf="parent"
         android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:inputType="numberDecimal"
-        android:layout_height="wrap_content"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvQuantity"
+        app:layout_constraintTop_toTopOf="@id/tvValue" />
 
     <Button
         android:id="@+id/btConfirm"

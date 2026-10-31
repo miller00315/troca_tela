@@ -1,12 +1,12 @@
 package com.miller.oliveira.trocatela
 
-import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -54,17 +54,17 @@ class LaunchActivity : AppCompatActivity() {
         var error = false
 
         if (edCode.text.isEmpty()) {
-            edCode.error = "Campo obrigatório"
+            edCode.error = getString(R.string.required)
 
             error = true
         }
         if (edQuantity.text.isEmpty()) {
-            edQuantity.error = "Campo obrigatório"
+            edQuantity.error = getString(R.string.required)
 
             error = true
         }
         if (edValue.text.isEmpty()) {
-            edValue.error = "Campo obrigatório"
+            edValue.error = getString(R.string.required)
 
             error = true
         }
@@ -72,7 +72,7 @@ class LaunchActivity : AppCompatActivity() {
         if (error) {
             Toast.makeText(
                 this,
-                "Verifique o scampos",
+                getString(R.string.verify),
                 Toast.LENGTH_SHORT
             ).show()
 
@@ -87,6 +87,17 @@ class LaunchActivity : AppCompatActivity() {
     }
 
     private fun btListOnCLick() {
+      val intent = Intent(this, ListActivity::class.java)
 
+      getResult.launch(intent)
+    }
+
+    private val getResult = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
+        result ->
+        if (result.resultCode == RESULT_OK) {
+            val code = result.data?.getIntExtra("cod", 0)
+
+            edCode.setText(code.toString())
+        }
     }
 }
